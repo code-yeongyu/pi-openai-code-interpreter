@@ -1,0 +1,4 @@
+pi-openai-code-interpreter
+
+This package targets the pi coding agent extension API by Mario Zechner and ports the senpi-mono builtin
+openai-code-interpreter extension into a standalone pi extension package.

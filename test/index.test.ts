@@ -112,7 +112,7 @@ describe("openai-code-interpreter builtin extension", () => {
 			tools: Array<Record<string, unknown>>;
 		};
 
-		const codeInterpreterTools = result.tools.filter((tool) => tool.type === "code_interpreter");
+		const codeInterpreterTools = result.tools.filter((tool) => tool["type"] === "code_interpreter");
 		expect(codeInterpreterTools).toHaveLength(1);
 		expect(codeInterpreterTools[0]).toEqual({ type: "code_interpreter", container: "cntr_xyz", extra: "preserve" });
 	});
@@ -127,7 +127,7 @@ describe("openai-code-interpreter builtin extension", () => {
 			tools: Array<Record<string, unknown>>;
 		};
 
-		const codeInterpreterTools = result.tools.filter((tool) => tool.type === "code_interpreter");
+		const codeInterpreterTools = result.tools.filter((tool) => tool["type"] === "code_interpreter");
 		expect(codeInterpreterTools).toHaveLength(1);
 		expect(codeInterpreterTools[0]).toEqual({
 			type: "code_interpreter",

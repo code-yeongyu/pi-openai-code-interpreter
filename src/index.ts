@@ -16,11 +16,11 @@ function isOpenAiResponsesApi(api: Api | undefined): api is "openai-responses" |
 }
 
 function isCodeInterpreterTool(tool: ToolDefinition): boolean {
-	return tool.type === "code_interpreter";
+	return tool["type"] === "code_interpreter";
 }
 
 function isCodeInterpreterFunctionVariant(tool: ToolDefinition): boolean {
-	return tool.type === "function" && tool.name === "code_interpreter";
+	return tool["type"] === "function" && tool["name"] === "code_interpreter";
 }
 
 function sanitizeTools(tools: unknown[]): ToolDefinition[] {
@@ -74,7 +74,8 @@ export function addOpenaiCodeInterpreterToPayload(api: Api | undefined, payload:
 		return payload;
 	}
 
-	const tools = Array.isArray(payload.tools) ? payload.tools : [];
+	const payloadTools = payload["tools"];
+	const tools: unknown[] = Array.isArray(payloadTools) ? payloadTools : [];
 	const sanitizedTools = sanitizeTools(tools);
 	const hasNativeCodeInterpreter = sanitizedTools.some((tool) => isCodeInterpreterTool(tool));
 	if (!hasNativeCodeInterpreter) {

@@ -277,7 +277,7 @@ describe("openai-code-interpreter before_agent_start", () => {
 					beforeAgentStartHandler = handler as BeforeAgentStartHandler;
 				}
 			},
-		} as unknown as ExtensionAPI;
+		} as ExtensionAPI;
 
 		openaiCodeInterpreterExtension(pi);
 		const result = await beforeAgentStartHandler?.(
@@ -303,7 +303,7 @@ describe("openai-code-interpreter before_agent_start", () => {
 					beforeAgentStartHandler = handler as BeforeAgentStartHandler;
 				}
 			},
-		} as unknown as ExtensionAPI;
+		} as ExtensionAPI;
 
 		openaiCodeInterpreterExtension(pi);
 		const result = await beforeAgentStartHandler?.({ systemPrompt: "base" }, { model: { api: "openai-responses" } });

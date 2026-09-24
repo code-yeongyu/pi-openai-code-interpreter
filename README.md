@@ -29,7 +29,7 @@ The package targets the [`pi`](https://github.com/badlogic/pi-mono/tree/main/pac
 
 ```bash
 # From npm (once published)
-pi install npm:pi-openai-code-interpreter
+pi install git:github.com/code-yeongyu/pi-openai-code-interpreter
 
 # From git
 pi install git:github.com/code-yeongyu/pi-openai-code-interpreter
